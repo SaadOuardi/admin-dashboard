@@ -1,0 +1,283 @@
+
+/* -----------------------------------------IMPORT----------------------------------------- */
+/* FONTS */
+/* Bebas Neu */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Protest+Riot&display=swap');
+
+/* VARIABLES */
+
+:root{
+    /* ------ BG COLORS ------ */
+
+        /* DEFAULT */
+        --primary-bgColor:rgb(182, 182, 182);
+        --secondary-bgColor:rgb(224, 224, 224);
+        --primary-bgColor-lists:rgb(102, 0, 255);
+        --primary-bgColor-notifs:rgb(251, 116, 116);
+
+    /* ------ TEXT COLORS ------ */
+
+        /* DEFAULT */
+        --primary-textColor: rgb(59, 59, 59) ;
+        --secondary-textColor-:black;
+
+        /* HOVER */
+        --primary-textColor-hover:white;
+        --secondary-textColor-hover: rgb(223, 190, 0);
+
+        /* ACTIVE */
+        --primary-textColor-active:white;
+        --secondary-textColor-active:black;
+
+        /* FONTS */
+        /* --primary-font-family: "Protest Riot", sans-serif; */
+        --primary-font-family: "Bebas Neu", sans-serif;
+        --secondary-font-family: "Anta", sans-serif;
+
+    /* DISTANCES */
+
+    --navbar-width:20%;
+    --main-width:80%;
+    
+    --primary-padding : 25px;
+    --secondary-padding: 15px;
+
+    --primary-marging : 25px;
+    --secondary-margin: 15px;
+
+    --primary-gap : 25px;
+    --secondary-gap: 15px
+}
+
+/* INITIALISATION */
+*{
+    padding: 0;
+    margin: 0;
+    font-family: var(--primary-font-family);
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+button{
+    background-color: blue;
+    color: white;
+    height: 30px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    width:50px;
+    height:50px;
+    border-radius: 9px;
+}
+
+.bi{
+    height: 25px;
+    width: 25px;
+}
+
+body{
+    background-color: white;
+    display: flex;
+    height: fit-content;
+}
+
+main{
+    background-color: var(--secondary-bgColor);
+    width: var(--main-width);
+}
+
+/* ------------ NAV BAR ---------- */
+
+
+/* COMPANY - CLOSE BTN */
+
+.sidebar__company-close-btn_div{
+    background-color: rgb(223, 237, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 5px;
+    position:sticky;
+    top: 0;
+}
+
+.div__company{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.company__name{
+    color: black;
+    font-size: 25px;
+}
+.companny__logo{
+    width: 40px;
+    height: 40px;
+}
+
+.div__buttons .bi{
+    color: red;
+    transition: color 0.2s ease-in-out;
+}
+
+.div__buttons .bi:hover{
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.div__buttons .show-navbar{
+    display: none;
+    color: green;
+}
+
+
+/* MAIN SIDE BAR */
+.main__sidebar{
+    background-color: var(--primary-bgColor);
+    height: 725px;
+    overflow-y:scroll;
+    overflow-x:none;
+    position: sticky;
+    top: 0;
+    cursor: pointer;
+    overflow-x: hidden;
+    transition: all 0.5s linear;
+}
+
+/* Style the scrollbar track */
+.main__sidebar::-webkit-scrollbar {
+    width: 10px; /* Set the width of the scrollbar */
+}
+/* Style the scrollbar thumb */
+.main__sidebar::-webkit-scrollbar-thumb {
+    background-color: black; /* Set the color of the thumb */
+    border-radius: 5px; /* Round the corners of the thumb */
+    border: 2px solid white;
+}
+
+/* Style the scrollbar track */
+.main__sidebar::-webkit-scrollbar-track {
+    background-color: rgb(191, 191, 191); /* Set the color of the track */
+}
+
+/* Optionally, you can also style the scrollbar buttons and corner */
+.main__sidebar::-webkit-scrollbar-button {
+    background-color: rgb(168, 168, 168);
+}
+
+.main__sidebar::-webkit-scrollbar-corner {
+    background-color: green;
+}
+
+
+.sidebar__main-div{
+    color: var(--primary-textColor);
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+
+li.active .sidebar__main-div {
+    color: white;
+}
+
+/* DEFAULT LIST */
+.sidebar__lists li{
+    width: 100%;
+    list-style: none;
+    transition: all 0.5s linear;
+}
+
+/* HOVER LIST */
+
+.sidebar__lists li:hover{
+    background-color: rgb(62, 62, 62);
+}
+
+.sidebar__lists li:hover .div__icon-name,
+.sidebar__lists li:hover .bi{
+    color: white;
+}
+/* ACTIVE LIST */
+.sidebar__lists li.active{
+    background-color: var(--primary-bgColor-lists);
+    color: var(--primary-textColor-active);
+}
+
+.sidebar__lists li.active:hover{
+    background-color: var(--primary-bgColor-lists);
+}
+
+/* SPECEFIC LISTS */
+
+/* SETTING */
+
+li.settings{
+    background-color: black;
+}
+
+li.settings .div__icon-name{
+    color: white;
+}
+/* LOGOUT */
+li.logout{
+    background-color: rgb(255, 90, 90);
+    transition: background-color 0.2s ease-out;
+}
+
+li.logout:hover{
+    background-color: black;
+}
+
+li.logout .div__icon-name{
+    color: white;
+}
+
+.div__notif-icon{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.div__icon-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* NOTIFICATION BUTTON */
+button.notification-number{
+    background-color: rgb(255, 67, 67);
+    height: 25px;
+    width: 35px;
+    font-size: 12px;
+    border: none;
+    border-radius: 25px;
+}
+
+/* ROW ICON */
+.div__notif-icon .bi{
+    height: 15px;
+    width: 15px;
+}
+
+
+
+
+/* ------------ MAIN CONTENT ------------ */
